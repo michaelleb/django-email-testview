@@ -1,9 +1,20 @@
 import os
-import email_testview
+import re
 from setuptools import find_packages, setup
 
 with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
     README = readme.read()
+
+    
+def get_version(package):
+    """
+    Return package version as listed in `__version__` in `init.py`.
+    """
+    init_py = open(os.path.join(package, '__init__.py')).read()
+    return re.search("__version__ = ['\"]([^'\"]+)['\"]", init_py).group(1)
+
+
+version = get_version('email_testview')
 
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
@@ -21,7 +32,7 @@ dev_requires = [
 
 setup(
     name='django-email-testview',
-    version=email_testview.__version__,
+    version=version,
     packages=find_packages(),
     include_package_data=True,
     license='MIT License',
@@ -38,7 +49,7 @@ setup(
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 2.2',
+        'Framework :: Django :: 3.0',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
