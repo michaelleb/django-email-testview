@@ -154,7 +154,7 @@ Add to your `INSTALLED_APPS` settings:
 ```py
 INSTALLED_APPS = [
     # ...
-    'email_testview',
+    'email_testview.apps.EmailTestViewConfig',
 ]
 ```
 
