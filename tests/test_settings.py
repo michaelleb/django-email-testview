@@ -40,7 +40,7 @@ EXTERNAL_APPS = [
 ]
 
 INTERNAL_APPS = [
-    'email_testview',
+    'email_testview.apps.EmailTestViewConfig',
     'tests.dummy_app',
 ]
 

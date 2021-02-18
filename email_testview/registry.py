@@ -1,4 +1,3 @@
-from django.utils.module_loading import autodiscover_modules
 
 
 class EmailRegistry:
@@ -31,5 +30,3 @@ class EmailRegistry:
 registry = EmailRegistry()
 
 
-def autodiscover_emails():
-    autodiscover_modules('emails', register_to=registry)

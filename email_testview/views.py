@@ -4,9 +4,8 @@ from django.conf import settings
 from django.http import HttpResponseForbidden
 from django.views.generic import TemplateView
 
-from .registry import autodiscover_emails, registry
+from .registry import registry
 
-autodiscover_emails()
 
 
 class EmailsView(TemplateView):
