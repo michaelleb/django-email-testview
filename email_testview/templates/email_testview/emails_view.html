@@ -1,7 +1,7 @@
 <ol>
   {% for item in emails %}
   <li>
-    <a href="/en/emails/test/{{ item }}/">{{ item }}</a>
+    <a href="{% url 'email_testview-detail' identifier=item %}">{{ item }}</a>
   </li>
   {% endfor %}
 </ol>
